@@ -8,14 +8,14 @@
         [(viewDate)]="viewDate"
         (viewDateChange)="closeOpenMonthViewDay()"
       >
-        Precednet
+        Precedent
       </div>
       <div
         class="btn btn-outline-secondary"
         mwlCalendarToday
         [(viewDate)]="viewDate"
       >
-        Current
+        Courant
       </div>
       <div
         class="btn btn-primary"
@@ -100,9 +100,9 @@
 <br /><br /><br />
 
 <h3>
-  Edit events
+  Modifier absences
   <button class="btn btn-primary float-end" (click)="addEvent()">
-    Add new
+    Ajouter
   </button>
   <div class="clearfix"></div>
 </h3>
@@ -111,12 +111,12 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Title</th>
+        <th>Titre</th>
         <th>Primary color</th>
         <th>Secondary + text color</th>
-        <th>Starts at</th>
-        <th>Ends at</th>
-        <th>Remove</th>
+        <th>Du</th>
+        <th>Au</th>
+        <th>Supprimer</th>
       </tr>
     </thead>
 
@@ -182,13 +182,14 @@
         </td>
         <td>
           <button class="btn btn-danger" (click)="deleteEvent(event)">
-            Delete
+            Supprimer
           </button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+
 
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
