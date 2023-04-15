@@ -13,10 +13,31 @@ import { getWeekViewPeriod } from '../util/util';
  */
 @Injectable()
 export class CalendarNativeDateFormatter
-  implements CalendarDateFormatterInterface
-{
-  constructor(protected dateAdapter: DateAdapter) {}
+  implements CalendarDateFormatterInterface {
+  constructor(protected dateAdapter: DateAdapter) { }
+  /**
+     * The year view header week day labels
+     */
+  public yearViewColumnHeader({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(date);
+  }
 
+  /**
+   * The year view cell day number
+   */
+  public yearViewDayNumber({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, { day: 'numeric' }).format(date);
+  }
+
+  /**
+   * The year view title
+   */
+  public yearViewTitle({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, {
+      year: 'numeric',
+      month: 'long',
+    }).format(date);
+  }
   /**
    * The month view header week day labels
    */

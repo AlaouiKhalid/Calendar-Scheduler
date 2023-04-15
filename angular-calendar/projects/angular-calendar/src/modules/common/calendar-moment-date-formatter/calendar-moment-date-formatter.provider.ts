@@ -36,6 +36,27 @@ export class CalendarMomentDateFormatter
     protected dateAdapter: DateAdapter
   ) {}
 
+   /**
+   * The year view header week day labels
+   */
+   public yearViewColumnHeader({ date, locale }: DateFormatterParams): string{
+    return this.moment(date).locale(locale).format('YYYY');
+   }
+
+   /**
+    * The year view cell day number
+    */
+   public yearViewDayNumber({ date, locale }: DateFormatterParams): string{
+    return this.moment(date).locale(locale).format('YYYY');
+   }
+ 
+   /**
+    * The year view title
+    */
+   public yearViewTitle({ date, locale }: DateFormatterParams): string{
+    return this.moment(date).locale(locale).format('YYYY');
+   }
+
   /**
    * The month view header week day labels
    */

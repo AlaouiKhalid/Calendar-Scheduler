@@ -34,6 +34,21 @@ export interface DateFormatterParams {
  */
 export interface CalendarDateFormatterInterface {
   /**
+   * The year view header week day labels
+   */
+  yearViewColumnHeader(params: DateFormatterParams): string;
+
+  /**
+   * The year view cell day number
+   */
+  yearViewDayNumber(params: DateFormatterParams): string;
+
+  /**
+   * The year view title
+   */
+  yearViewTitle(params: DateFormatterParams): string;
+
+  /**
    * The month view header week day labels
    */
   monthViewColumnHeader(params: DateFormatterParams): string;

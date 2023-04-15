@@ -12,9 +12,18 @@ import { getWeekViewPeriod } from '../util/util';
  */
 @Injectable()
 export class CalendarAngularDateFormatter
-  implements CalendarDateFormatterInterface
-{
-  constructor(protected dateAdapter: DateAdapter) {}
+  implements CalendarDateFormatterInterface {
+  constructor(protected dateAdapter: DateAdapter) { }
+  
+  yearViewColumnHeader({ date, locale }: DateFormatterParams): string {
+    return formatDate(date, 'YYYY', locale);
+  }
+  yearViewDayNumber({ date, locale }: DateFormatterParams): string {
+    return formatDate(date, 'YYYY', locale);
+  }
+  yearViewTitle({ date, locale }: DateFormatterParams): string {
+    return formatDate(date, 'YYYY', locale);
+  }
 
   /**
    * The month view header week day labels
