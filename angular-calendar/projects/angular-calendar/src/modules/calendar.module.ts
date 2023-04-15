@@ -6,12 +6,14 @@ import {
   CalendarDateFormatter,
   CalendarA11y,
 } from './common/calendar-common.module';
+import { CalendarYearModule } from './year/calendar-year.module';
 import { CalendarMonthModule } from './month/calendar-month.module';
 import { CalendarWeekModule } from './week/calendar-week.module';
 import { CalendarDayModule } from './day/calendar-day.module';
 import { CalendarUtils } from './common/calendar-utils/calendar-utils.provider';
 
 export * from './common/calendar-common.module';
+export * from './year/calendar-year.module';
 export * from './month/calendar-month.module';
 export * from './week/calendar-week.module';
 export * from './day/calendar-day.module';
@@ -34,16 +36,18 @@ export * from './day/calendar-day.module';
 @NgModule({
   imports: [
     CalendarCommonModule,
+    CalendarYearModule,
     CalendarMonthModule,
     CalendarWeekModule,
     CalendarDayModule,
   ],
   exports: [
     CalendarCommonModule,
+    CalendarYearModule,
     CalendarMonthModule,
     CalendarWeekModule,
     CalendarDayModule,
-  ],
+  ]
 })
 export class CalendarModule {
   static forRoot(
