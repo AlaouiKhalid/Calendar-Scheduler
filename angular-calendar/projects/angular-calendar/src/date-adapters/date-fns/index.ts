@@ -11,6 +11,8 @@ import {
   setYear,
   getDate,
   getYear,
+  addYears,
+  subYears
 } from 'date-fns';
 import { DateAdapter } from '../date-adapter';
 
@@ -18,10 +20,12 @@ export function adapterFactory(): DateAdapter {
   return {
     ...baseAdapterFactory(),
     addWeeks,
+    addYears,
     addMonths,
     subDays,
     subWeeks,
     subMonths,
+    subYears,
     getISOWeek,
     setDate,
     setMonth,

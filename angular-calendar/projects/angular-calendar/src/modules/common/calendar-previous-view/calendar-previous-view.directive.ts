@@ -28,7 +28,7 @@ export class CalendarPreviousViewDirective {
   /**
    * The current view
    */
-  @Input() view: CalendarView | 'month' | 'week' | 'day';
+  @Input() view: CalendarView | 'year' | 'month' | 'week' | 'day';
 
   /**
    * The current view date
@@ -50,7 +50,7 @@ export class CalendarPreviousViewDirective {
    */
   @Output() viewDateChange: EventEmitter<Date> = new EventEmitter();
 
-  constructor(private dateAdapter: DateAdapter) {}
+  constructor(private dateAdapter: DateAdapter) { }
 
   /**
    * @hidden
@@ -61,6 +61,7 @@ export class CalendarPreviousViewDirective {
       day: this.dateAdapter.subDays,
       week: this.dateAdapter.subWeeks,
       month: this.dateAdapter.subMonths,
+      year: this.dateAdapter.subYears,
     }[this.view];
 
     if (this.view === CalendarView.Day) {
@@ -81,6 +82,8 @@ export class CalendarPreviousViewDirective {
           this.excludeDays
         )
       );
+    } else if (this.view === CalendarView.Month) {
+      this.viewDateChange.emit(subFn(this.viewDate, 1));
     } else {
       this.viewDateChange.emit(subFn(this.viewDate, 1));
     }

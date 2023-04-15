@@ -1,17 +1,4 @@
-
-yyyyyyyyyyyyyyyyyyyyyyy
 <div class="conteneur-global" (echap)="annulerSelectionIndirecte()">
-    <div class="conteneur-annee">
-        <button mat-icon-button class="fleche-navigation" (click)="chargerAnneePrecedente($event)">
-            <i>dd
-                </i>
-        </button>
-        <span class="annee-courante">{{anneeCourante}}</span>
-        <button mat-icon-button class="fleche-navigation" (click)="chargerAnneeSuivante($event)">
-            <i>==></i>
-        </button>
-    </div>
-
     <table class="calendrier">
         <thead>
             <tr>
@@ -21,18 +8,16 @@ yyyyyyyyyyyyyyyyyyyyyyy
         <tbody (clicExterieur)="reinitialiserSelectionAbsence()">
             <tr class="ligne-mois" *ngFor="let mois of nomsMois; let index = index">
 
-                <th scope="row" class="nom-mois" (mouseup)="traiterSelection($event)">{{mois}}</th>
+                <th scope="row" class="nom-mois">{{mois}}</th>
 
                 <ng-container *ngFor="let jour of datesCalendrier[index]">
-                    <td class="cellule"
-                        [title]="jour.date | date" (mousedown)="selectionnerIntervalleAbsence(jour, $event)"
-                        (mouseup)="traiterSelection($event, jour)" (mouseover)="selectionnerJour(jour)"
-                        (mouseout)="deselectionnerJour()" [ngClass]="[jour.jour ? 'numero-jour' : 'sans-bord']"
+                    <td class="cellule" [title]="jour.date | date"
+                        (mousedown)="selectionnerIntervalleAbsence(jour, $event)" (mouseover)="selectionnerJour(jour)"
+                        [ngClass]="[jour.jour ? 'numero-jour' : 'sans-bord']"
                         (contextmenu)="ouvrirMenuContextuel($event,jour)">
                         {{jour.jour}}
                     </td>
                 </ng-container>
-
             </tr>
         </tbody>
     </table>

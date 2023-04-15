@@ -5,11 +5,15 @@ export abstract class DateAdapter implements BaseDateAdapter {
 
   abstract addMonths(date: Date | number, amount: number): Date;
 
+  abstract addYears(date: Date | number, amount: number): Date;
+
   abstract subDays(date: Date | number, amount: number): Date;
 
   abstract subWeeks(date: Date | number, amount: number): Date;
 
   abstract subMonths(date: Date | number, amount: number): Date;
+
+  abstract subYears(date: Date | number, amount: number): Date;
 
   abstract getISOWeek(date: Date | number): number;
 
