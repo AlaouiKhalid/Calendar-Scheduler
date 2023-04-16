@@ -1,34 +1,9 @@
 {
   "name": "angular-calendar",
   "version": "0.31.0",
-  "description": "A calendar component for angular 15.0+ that can display events on a month, week or day view",
-  "packageManager": "pnpm@7.18.1",
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "webpack",
-        "@angular-devkit/*"
-      ]
-    }
-  },
+  "description": "A calendar component for angular 15.0+ that can display events on a month, week or day view", 
   "scripts": {
     "start": "ng serve"
-  },
-  "schematics": "./schematics/collection.json",
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "footer-max-line-length": [
-        0
-      ]
-    }
-  },
-  "lint-staged": {
-    "*.scss": [
-      "stylelint --fix"
-    ]
   },
   "keywords": [
     "angular",
@@ -134,10 +109,6 @@
     "positioning": "^2.0.1",
     "tslib": "^2.4.1"
   },
-  "sideEffects": [
-    "*.css",
-    "*.scss"
-  ],
   "exports": {
     "./date-adapters/date-adapter": {
       "main": "./date-adapters/index.js",
