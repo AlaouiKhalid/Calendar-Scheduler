@@ -2,6 +2,9 @@
 @use 'sass:color';
 @import '../../../variables';
 
+@import "../node_modules/ng-zorro-antd/style/index.min.css"; /* Import base styles */
+@import "../node_modules/ng-zorro-antd/calendar/style/index.min.css";  /* Import one component's styles */
+
 $cal-month-view-vars: () !default;
 $cal-month-view-vars: map.merge($cal-vars, $cal-month-view-vars);
 

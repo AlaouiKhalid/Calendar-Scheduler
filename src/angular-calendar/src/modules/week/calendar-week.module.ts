@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ResizableModule } from 'angular-resizable-element';
 import { DragAndDropModule } from 'angular-draggable-droppable';
@@ -49,5 +49,6 @@ export { CalendarWeekViewCurrentTimeMarkerComponent as ɵCalendarWeekViewCurrent
     CalendarWeekViewHourSegmentComponent,
     CalendarWeekViewCurrentTimeMarkerComponent,
   ],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr_FR' }],
 })
 export class CalendarWeekModule {}
